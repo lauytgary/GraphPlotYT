@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="GraphPlotYT",
-    version="0.1",
+    version="1.0.0",
     packages=find_packages(),
     description="Plot backtest graph",
     long_description=open("README.md").read(),
