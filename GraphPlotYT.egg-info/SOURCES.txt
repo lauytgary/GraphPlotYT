@@ -6,3 +6,8 @@ GraphPlotYT.egg-info/SOURCES.txt
 GraphPlotYT.egg-info/dependency_links.txt
 GraphPlotYT.egg-info/requires.txt
 GraphPlotYT.egg-info/top_level.txt
+graphplotyt.egg-info/PKG-INFO
+graphplotyt.egg-info/SOURCES.txt
+graphplotyt.egg-info/dependency_links.txt
+graphplotyt.egg-info/requires.txt
+graphplotyt.egg-info/top_level.txt

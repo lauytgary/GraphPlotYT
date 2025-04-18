@@ -1,6 +1,6 @@
-Metadata-Version: 2.1
-Name: GraphPlotYT
-Version: 1.0.0
+Metadata-Version: 2.4
+Name: graphplotyt
+Version: 1.0.1
 Summary: Plot backtest graph
 Home-page: https://github.com/lauytgary/GraphPlotYT
 Author: Gary YT Lau
@@ -11,6 +11,18 @@ Classifier: Operating System :: OS Independent
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 License-File: LICENSE
+Requires-Dist: pandas>=1.5.0
+Requires-Dist: plotly<6,>=5.10.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: description
+Dynamic: description-content-type
+Dynamic: home-page
+Dynamic: license-file
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
 
 # GraphPlotYT
 
