@@ -2,6 +2,8 @@ LICENSE
 README.md
 pyproject.toml
 setup.py
+graphplotyt/__init__.py
+graphplotyt/my_graphplotyt.py
 graphplotyt.egg-info/PKG-INFO
 graphplotyt.egg-info/SOURCES.txt
 graphplotyt.egg-info/dependency_links.txt
