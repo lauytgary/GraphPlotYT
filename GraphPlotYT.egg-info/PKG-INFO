@@ -1,8 +1,8 @@
 Metadata-Version: 2.4
 Name: graphplotyt
-Version: 1.0.1
+Version: 1.0.2
 Summary: Plot backtest graph
-Home-page: https://github.com/lauytgary/GraphPlotYT
+Home-page: https://github.com/lauytgary/graphplotyt
 Author: Gary YT Lau
 Author-email: lauytgary@gmail.com
 Classifier: Programming Language :: Python :: 3
@@ -30,4 +30,4 @@ Plot graph for backtest
 
 ## Installation
 ```bash
-pip install GraphPlotYT
+pip install graphplotyt

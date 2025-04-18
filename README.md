@@ -4,4 +4,4 @@ Plot graph for backtest
 
 ## Installation
 ```bash
-pip install GraphPlotYT
+pip install graphplotyt
