@@ -8,8 +8,15 @@ import random
 
 
 def random_color():
-    color = f'rgb({random.randint(0, 255)}, {random.randint(0, 255)}, {random.randint(0, 255)})'
-    return color
+    # ensure dark color for rgb average <=128
+    while True:
+        r = random.randint(0, 255)
+        g = random.randint(0, 255)
+        b = random.randint(0, 255)
+        avg = (r+g+b)/3
+        if avg <= 128:
+            return f'rgb({r}, {g}, {b})'
+
 
 
 def graphplot(stock_name, file_name_list, num_of_lines=100):
@@ -146,4 +153,4 @@ def graphplot(stock_name, file_name_list, num_of_lines=100):
 
 if __name__ == '__main__':
     file_name_list = ['0388.HK_541021']
-    graphplot(file_name_list)
+    graphplot('HKEX', file_name_list)
