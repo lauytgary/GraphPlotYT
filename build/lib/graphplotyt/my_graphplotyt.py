@@ -120,6 +120,7 @@ def graphplot(stock_name, file_name_list, num_of_lines=100):
                                  visible='legendonly', yaxis='y1'),
                       row=1, col=1)
 
+
     # 手動設置次 y 軸
     fig.update_layout(title=stock_name + ' price & equity curve',
                       xaxis=dict(title='日期 Date',
@@ -146,6 +147,22 @@ def graphplot(stock_name, file_name_list, num_of_lines=100):
                       legend=dict(x=1.1, y=1), # 調整圖例位置（避免被右軸覆蓋）
                       hovermode='x unified',  # 統一懸停模式，顯示所有 y 值
                       spikedistance=1000,     # 防止意外觸發（單位：像素）
+                      )
+
+    # Construct the 'visible' list
+    visible_list = [True, True]  # the first 2 graphs are stock price and volume, keep them visible
+    for j in range(len(fig.data) - 2):
+        visible_list.append('legendonly')
+
+    fig.update_layout(updatemenus=[dict(type="buttons",
+                                        buttons=[dict(label="Reset",
+                                                      method="update",
+                                                      args=[{"visible": visible_list}])],
+                                        x=1,  # Horizontal position (to the right of the plotting area)
+                                        y=1)  # Vertical position (aligned with the top of the plotting area)
+                                        #xanchor="left",  # Anchor point for horizontal alignment
+                                        #yanchor="top",  # Anchor point for vertical alignment
+                                   ]
                       )
 
     fig.show()
