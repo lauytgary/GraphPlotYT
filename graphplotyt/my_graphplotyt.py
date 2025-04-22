@@ -33,7 +33,7 @@ def graphplot(stock_name, file_name_list, num_of_lines=100):
     df_list = []
 
     for file_name in file_name_list:
-        file_path = os.path.join('backtest_output_df', file_name + '.csv')
+        file_path = os.path.join('backtest_output', file_name + '.csv')
         df = pd.read_csv(file_path)
 
         # find overall pct change compared to starting date
@@ -183,3 +183,7 @@ def graphplot(stock_name, file_name_list, num_of_lines=100):
 if __name__ == '__main__':
     file_name_list = ['0388.HK_541021']
     graphplot('HKEX', file_name_list)
+
+# use the following 2 lines to update pypi
+#python3.11 setup.py sdist bdist_wheel
+#python3.11 -m twine upload dist/*
