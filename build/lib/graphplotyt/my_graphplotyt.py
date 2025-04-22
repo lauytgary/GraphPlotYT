@@ -54,7 +54,7 @@ def graphplot(stock_name, file_name_list, num_of_lines=100):
                              line=dict(color='blue', width=1), yaxis='y1'),
                   row=1, col=1)
 
-    # Line in subplot
+    # Line in subplot: Volume
     fig.add_trace(go.Scatter(x=df_list[0]['date'], y=df_list[0]['volume'],
                              name='Volume',
                              text=[f"Date: {date}<br>Close Price: {close:.2f}<br>Volume: {volume:.2f}" for date, close, volume in zip(df_list[0]['date'], df_list[0]['close'], df_list[0]['volume'])],
@@ -149,19 +149,31 @@ def graphplot(stock_name, file_name_list, num_of_lines=100):
                       spikedistance=1000,     # 防止意外觸發（單位：像素）
                       )
 
-    # Construct the 'visible' list
-    visible_list = [True, True]  # the first 2 graphs are stock price and volume, keep them visible
+    # Construct the 'visible' list for 'reset' button
+    reset_visible_list = [True, True]  # the first 2 graphs are stock price and volume, keep them visible
     for j in range(len(fig.data) - 2):
-        visible_list.append('legendonly')
+        reset_visible_list.append('legendonly')
+
+    # Construct the 'visible' list for 'show all' button
+    show_all_visible_list = [True, True]
+    for k in range(len(fig.data) - 2):
+        if k % 5 == 0:    # since every equity curve diff by 5 units, with 'buy', 'sell', 'take_profit', 'stop_loss' in between
+            show_all_visible_list.append(True)
+        else:
+            show_all_visible_list.append('legendonly')
+
 
     fig.update_layout(updatemenus=[dict(type="buttons",
                                         buttons=[dict(label="Reset",
                                                       method="update",
-                                                      args=[{"visible": visible_list}])],
+                                                      args=[{"visible": reset_visible_list}]),
+                                                 dict(label="Show All",
+                                                      method="update",
+                                                      args=[{"visible": show_all_visible_list}])],
                                         x=1,  # Horizontal position (to the right of the plotting area)
-                                        y=1)  # Vertical position (aligned with the top of the plotting area)
-                                        #xanchor="left",  # Anchor point for horizontal alignment
-                                        #yanchor="top",  # Anchor point for vertical alignment
+                                        y=1,  # Vertical position (aligned with the top of the plotting area)
+                                        xanchor="left",  # Anchor point for horizontal alignment
+                                        yanchor="top")  # Anchor point for vertical alignment
                                    ]
                       )
 
