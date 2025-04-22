@@ -15,6 +15,10 @@ Not recommended for new projects.
 Mobile Browsers:
 Works on Chrome (Android) and Safari (iOS), but complex charts may need responsive design tweaks.
 
+
+### Version 1.3.1 update 20250422
+- Minor amendments
+
 ### Version 1.3.0 update 20250422
 - Add 'Show All' button to show all equity curves
 - Set buttons positions
