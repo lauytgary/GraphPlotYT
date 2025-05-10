@@ -1,6 +1,6 @@
 Metadata-Version: 2.4
 Name: graphplotyt
-Version: 1.3.0
+Version: 1.3.2
 Summary: Plot backtest graph
 Home-page: https://github.com/lauytgary/graphplotyt
 Author: Gary YT Lau
@@ -40,6 +40,13 @@ Not recommended for new projects.
 
 Mobile Browsers:
 Works on Chrome (Android) and Safari (iOS), but complex charts may need responsive design tweaks.
+
+
+### Version 1.3.2 update 20250511
+- Minor amendments
+
+### Version 1.3.1 update 20250422
+- Minor amendments
 
 ### Version 1.3.0 update 20250422
 - Add 'Show All' button to show all equity curves

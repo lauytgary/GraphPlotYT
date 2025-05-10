@@ -16,6 +16,9 @@ Mobile Browsers:
 Works on Chrome (Android) and Safari (iOS), but complex charts may need responsive design tweaks.
 
 
+### Version 1.3.2 update 20250511
+- Minor amendments
+
 ### Version 1.3.1 update 20250422
 - Minor amendments
 

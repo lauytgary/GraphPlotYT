@@ -83,8 +83,8 @@ def graphplot(stock_name, file_name_list, num_of_lines=100):
         # Filter buy/sell actions
         df_buy = (df['action'] == 'BUY')
         df_sell = (df['action'] == 'SELL')
-        df_tp = (df['action'] == 'Take_Profit')
-        df_sl = (df['action'] == 'Stop_Loss')
+        df_tp = (df['action'] == 'TAKE_PROFIT')
+        df_sl = (df['action'] == 'STOP_LOSS')
 
         fig.add_trace(go.Scatter(x=df[df_buy]['date'], y=df[df_buy]['cum_pct_change'],
                                  mode='markers', name='Buy',
@@ -95,7 +95,7 @@ def graphplot(stock_name, file_name_list, num_of_lines=100):
                       row=1, col=1)
 
         fig.add_trace(go.Scatter(x=df[df_sell]['date'], y=df[df_sell]['cum_pct_change'],
-                                 mode='markers', name='SELL',
+                                 mode='markers', name='Sell',
                                  text=[f"Date: {date}<br>Sell Price: {close:.2f}" for date, close in zip(df[df_sell]['date'], df[df_sell]['close'])],
                                  hoverinfo='text',
                                  marker=dict(symbol='triangle-down', size=15, color='orange'),
@@ -103,7 +103,7 @@ def graphplot(stock_name, file_name_list, num_of_lines=100):
                       row=1, col=1)
 
         fig.add_trace(go.Scatter(x=df[df_tp]['date'], y=df[df_tp]['cum_pct_change'],
-                                 mode='markers', name='Take_Profit',
+                                 mode='markers', name='Take Profit',
                                  text=[f"Date: {date}<br>Close Price (take profit): {close:.2f}" for date, close in zip(df[df_tp]['date'], df[df_tp]['close'])],
                                  hoverinfo='text',
                                  marker=dict(symbol='star', size=15, color='gold'),
@@ -112,7 +112,7 @@ def graphplot(stock_name, file_name_list, num_of_lines=100):
                       row=1, col=1)
 
         fig.add_trace(go.Scatter(x=df[df_sl]['date'], y=df[df_sl]['cum_pct_change'],
-                                 mode='markers', name='Stop_loss',
+                                 mode='markers', name='Stop loss',
                                  text=[f"Date: {date}<br>Close Price (stop loss): {close:.2f}" for date, close in zip(df[df_sl]['date'], df[df_sl]['close'])],
                                  hoverinfo='text',
                                  marker=dict(symbol='x', size=15, color='red'),
