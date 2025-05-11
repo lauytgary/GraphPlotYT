@@ -7,6 +7,21 @@ from plotly.subplots import make_subplots
 import random
 
 
+def save_backtest_df(df, code, single_para_combination_dict):
+    # save backtest result as csv for graphplot
+    if not os.path.isdir('backtest_output'): os.mkdir('backtest_output')  # default set folder name as 'backtest result'
+
+    combined_para_str_list = [str(value) for value in single_para_combination_dict.values()]
+    combined_para_str_join = ''.join(combined_para_str_list).replace('.', '')
+
+    file_name = code + '_' + combined_para_str_join
+    file_path = os.path.join('backtest_output', file_name + '.csv')
+    df.to_csv(file_path)
+
+    return file_name
+
+
+
 def random_color():
     # ensure dark color for rgb average <=128
     while True:

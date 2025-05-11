@@ -16,7 +16,7 @@ Mobile Browsers:
 Works on Chrome (Android) and Safari (iOS), but complex charts may need responsive design tweaks.
 
 
-### Version 1.4.0 update 20250511
+### Version 1.4.1 update 20250511
 - Add save_backtest_df() for saving backtest result to 'backtest_output' folder
 
 ### Version 1.3.2 update 20250511
